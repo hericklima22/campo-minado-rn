@@ -6,7 +6,12 @@ export default (props) => {
   const rows = props.board.map((row, r) => {
     const columns = row.map((fields, c) => {
       return (
-        <Field {...fields} key={c} onOpen={() => props.onOpenField(r, c)} />
+        <Field
+          {...fields}
+          key={c}
+          onOpen={() => props.onOpenField(r, c)}
+          onSelectField={() => props.onSelectField(r, c)}
+        />
       );
     });
     return (
